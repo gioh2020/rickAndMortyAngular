@@ -1,9 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EpisodesModule } from './components/pages/episodes/episodes.module';
+import { HomeModule } from './components/pages/home/home.module';
+import { CharactersDetailsModule } from './components/pages/characters/characters-details/characters-details.module';
+import { CharactersListModule } from './components/pages/characters/characters-list/characters-list.module';
+import { HomeComponent } from './components/pages/home/home.component';
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'character-list', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./components/pages/home/home.module').then(m => m.HomeModule) },
+  { path: 'home', component: HomeComponent},
   { path: 'episodes', loadChildren: () => import('./components/pages/episodes/episodes.module').then(m => m.EpisodesModule) },
   {
     path: 'character-list',
